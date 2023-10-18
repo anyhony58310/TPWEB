@@ -1,56 +1,69 @@
-<?php
-    // Déclaration du tableau de recettes en utilisant des tableaux associatifs
-    $recipes = [
-        [
-            'name' => 'Cassoulet',
-            'description' => 'Description du cassoulet',
-            'email' => 'mickael.andrieu@exemple.com',
-            'enabled' => true
-        ],
-        [
-            'name' => 'Couscous',
-            'description' => 'Description du couscous',
-            'email' => 'mickael.andrieu@exemple.com',
-            'enabled' => false
-        ],
-        [
-            'name' => 'Burger',
-            'description' => 'Description du burger',
-            'email' => 'anthony.regala@exemple.com',
-            'enabled' => true
-        ],
-        [
-            'name' => 'Kebab',
-            'description' => 'Description du kebab',
-            'email' => 'bob.jesaispas@exemple.com',
-            'enabled' => true
-        ],
-        [
-            'name' => 'Frites',
-            'description' => 'Description des frites',
-            'email' => 'amelie.robin@exemple.com',
-            'enabled' => false
-        ]
-    ];
-?>
-
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Affichage des recettes</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head>
-    <body>
-        <h1>Afficher des recettes</h1>
-            <ul>
-                <?php foreach ($recipes as $recipe): ?>
-                    <?php if ($recipe['enabled']): ?>
-                        <li>
-                            <?php echo $recipe['name'] . ' (' . $recipe['email'] . ')'; ?>
-                        </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </ul>
-    </body>
+<head>
+    <title>Affichage des recettes</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Affichage des recettes</h1>
+    <ul>
+        <?php
+        $users = [
+            [
+                'full_name' => 'Mickaël Andrieu',
+                'email' => 'mickael.andrieu@exemple.com',
+                'age' => 34,
+            ],
+            [
+                'full_name' => 'Mathieu Nebra',
+                'email' => 'mathieu.nebra@exemple.com',
+                'age' => 34,
+            ],
+            [
+                'full_name' => 'Laurène Castor',
+                'email' => 'laurene.castor@exemple.com',
+                'age' => 28,
+            ],
+        ];
+
+        $recipes = [
+            [
+                'title' => 'Cassoulet',
+                'recipe' => 'etape 1 -> je sais pas',
+                'author' => 'mickael.andrieu@exemple.com',
+                'is_enabled' => true,
+            ],
+            [
+                'title' => 'Couscous',
+                'recipe' => 'etape 1 -> je sais pas',
+                'author' => 'mickael.andrieu@exemple.com',
+                'is_enabled' => false,
+            ],
+            [
+                'title' => 'Escalope milanaise',
+                'recipe' => 'etape 1 -> je sais pas',
+                'author' => 'mathieu.nebra@exemple.com',
+                'is_enabled' => true,
+            ],
+            [
+                'title' => 'Salade Romaine',
+                'recipe' => 'etape 1 -> je sais pas',
+                'author' => 'laurene.castor@exemple.com',
+                'is_enabled' => false,
+            ],
+        ];
+
+        foreach ($recipes as $recipe) {
+            if ($recipe['is_enabled']) {
+                echo '<li>';
+                echo '<h2>Recette : ' . $recipe['title'] . '</h2><br>';
+                echo 'Auteur : ' . $recipe['author'] . '<br>';
+                echo 'recipe ; ' . $recipe['recipe'] . '<br>';
+                // Autres détails de la recette ici
+                echo '</li>';
+            }
+        }
+        ?>
+    </ul>
+</body>
 </html>

@@ -1,20 +1,17 @@
-body {
-    font-family: Arial, sans-serif;
+h1 {
+    font-size: 24px; /* Augmente la taille de la police */
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none; /* Supprime les puces de la liste */
 }
 
 li {
-    background-color: #f0f0f0;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 20px; /* Ajoute de l'espace entre les éléments de la liste */
+    border: 1px solid #ccc; /* Ajoute une bordure autour de chaque recette */
+    padding: 10px; /* Ajoute de l'espace intérieur pour une meilleure lisibilité */
 }
 
-h1 {
-    text-align: center;
+h2 {
+    font-size: 20px;
 }
